@@ -95,7 +95,6 @@ The executable will be created in the `dist` folder.
 - 🔐 Local encryption/decryption (your keys never leave your device)
 - 🖼️ PNG format support
 - 🌐 Browser extension for seamless viewing
-- 💾 Compatible with Google Photos and other cloud storage
 
 ---
 
