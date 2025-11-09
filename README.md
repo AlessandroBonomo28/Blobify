@@ -1,4 +1,4 @@
-# Blobify 🗿
+# BLOBify 🗿
 
 **Protect your privacy from cloud providers.** Encrypt and decrypt your photos locally in PNG format!
 
