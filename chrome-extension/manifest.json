@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "BLOBIFY Google Photos",
+  "description": "This extension decrypts your encrypted blobs in Google Photos.",
+  "author": "goodman",
+  "version": "1.0.0",
+  "content_scripts": [
+    {
+      "matches": ["https://photos.google.com/*"],
+      "js": ["Content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon128.png",
+    "48": "icon128.png",
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Imposta password",
+    "default_icon": {
+      "16": "icon128.png",
+      "48": "icon128.png",
+      "128": "icon128.png"
+    }
+  }
+  
+}
