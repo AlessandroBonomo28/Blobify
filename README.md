@@ -100,5 +100,10 @@ The executable will be created in the `dist` folder.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request but ensure that:
+- The code is tested and works as expected
+- Pull requests are small and focused on a single feature or fix
+- Commits are atomic - ideally one commit per PR when possible
+- Code follows the existing style and conventions
+- You provide a clear description of what the PR does and why
 
