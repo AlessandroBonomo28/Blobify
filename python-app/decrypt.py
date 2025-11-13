@@ -22,7 +22,7 @@ def decrypt_data(encrypted_data: bytes, password: str) -> bytes:
 
 def main():
     input_path = input("Immagine PNG criptata: ")
-    password = input("Password: ")
+    password   = input("Password: ")
 
     encrypted = extract_data_from_png(input_path)
     data = decrypt_data(encrypted, password)

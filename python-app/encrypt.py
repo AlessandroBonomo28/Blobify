@@ -30,8 +30,8 @@ def embed_to_png(encrypted_data: bytes, output_path: str):
     img.save(output_path, "PNG")
 
 def main():
-    input_path = input("File da criptare (es. prova.webp): ")
-    password = input("Password: ")
+    input_path  = input("File da criptare (es. prova.webp): ")
+    password    = input("Password: ")
     output_path = input("Nome file di output PNG (es. criptato.png): ")
 
     ext = os.path.splitext(input_path)[1]
@@ -40,7 +40,7 @@ def main():
 
     # Prepara dati con estensione incorporata
     ext_bytes = ext.encode("utf-8")
-    packed = struct.pack("B", len(ext_bytes)) + ext_bytes + raw_data
+    packed    = struct.pack("B", len(ext_bytes)) + ext_bytes + raw_data
 
     encrypted = encrypt_data(packed, password)
     embed_to_png(encrypted, output_path)

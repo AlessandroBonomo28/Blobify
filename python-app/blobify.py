@@ -16,6 +16,19 @@ from Crypto.Random import get_random_bytes
 import base64
 import struct
 
+# Metadata
+__version__ = "v.0.0.1" 
+__doc__ = f"""
+Blobify - {__version__} - a goodman, Frêney Studios
+"""
+__author__ = "a goodman, Frêney Studios"
+__all__ = [
+    "WorkerThread",
+    "resource_path",
+    "ImageEncryptorApp"
+]
+
+# Worker principale
 class WorkerThread(QThread):
     finished = pyqtSignal(bool, str)
     progress = pyqtSignal(str)
@@ -239,7 +252,7 @@ class ImageEncryptorApp(QMainWindow):
         self.init_ui()
     
     def init_ui(self):
-        self.setWindowTitle("BLOBIFY")
+        self.setWindowTitle(f"BLOBIFY - {__version__}")
         self.setFixedSize(700, 680)
         
         # Carica l'icona se disponibile
@@ -499,7 +512,7 @@ class ImageEncryptorApp(QMainWindow):
         self.output_input.setText(self.output_base)
     
     def set_mode(self, mode : str):
-        self.mode = mode
+        self.mode = str(mode)
     
     def set_target(self, target):
         self.target_type = target
@@ -568,7 +581,7 @@ class ImageEncryptorApp(QMainWindow):
     def on_finished(self, success : bool, message : str):
         self.progress_bar.setVisible(False)
         
-        if success:
+        if bool(success):
             QMessageBox.information(self, "Success", message)
             self.status_label.setText("Completed!")
             self.status_label.setStyleSheet("color: #27ae60; font-size: 10px;")
@@ -577,7 +590,7 @@ class ImageEncryptorApp(QMainWindow):
             self.status_label.setText("Error!")
             self.status_label.setStyleSheet("color: #e74c3c; font-size: 10px;")
 
-
+# Entry point
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setStyle('Fusion')

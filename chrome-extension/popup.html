@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blobify</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        min-width: 250px;
+        padding: 15px;
+      }
+      h1 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      input[type="password"] {
+        width: 100%;
+        padding: 6px;
+        margin-bottom: 10px;
+      }
+      button {
+        width: 100%;
+        padding: 8px;
+        background: #4285f4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      #status {
+        margin-top: 10px;
+        font-size: 13px;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ENCRYPT YOUR DATA</h1>
+    <h1>GIVE THEM SOME BLOBS</h1>
+    <img src="icon.png" alt="Blobify Icon" style="width: 100%; display: block; margin-bottom: 10px;" />
+    <p>This extension decrypts your encrypted blobs in Google Photos. You can turn your photos in encrypted blobs using <a href="" style="color: #4285f4;">blobify open source software</a></p>
+    <p>Set decrypt password</p>
+    <input type="password" id="password" placeholder="123" />
+    <button id="save">Save</button>
+    <div id="status"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
