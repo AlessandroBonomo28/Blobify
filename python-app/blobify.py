@@ -218,7 +218,7 @@ class WorkerThread(QThread):
         except Exception as e:
             raise Exception(f"Invalid PNG or not encrypted with this program: {e}")
 
-def resource_path(relative_path):
+def resource_path(relative_path : str):
     """ Restituisce il percorso assoluto alla risorsa, compatibile con PyInstaller """
     if hasattr(sys, '_MEIPASS'):
         # quando è in esecuzione dal .exe
@@ -498,7 +498,7 @@ class ImageEncryptorApp(QMainWindow):
         self.output_base = os.path.dirname(os.path.abspath(__file__))
         self.output_input.setText(self.output_base)
     
-    def set_mode(self, mode):
+    def set_mode(self, mode : str):
         self.mode = mode
     
     def set_target(self, target):
@@ -562,10 +562,10 @@ class ImageEncryptorApp(QMainWindow):
         self.worker.progress.connect(self.on_progress)
         self.worker.start()
     
-    def on_progress(self, message):
+    def on_progress(self, message : str):
         self.status_label.setText(message)
     
-    def on_finished(self, success, message):
+    def on_finished(self, success : bool, message : str):
         self.progress_bar.setVisible(False)
         
         if success:
